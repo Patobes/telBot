@@ -27,7 +27,14 @@ class LicitacionCommand extends AdminCommand
 	$licitacion = file_get_contents($url);
 	$licitacion = json_decode($licitacion, true);
 
-	$info=$licitacion['titulo']." URL: ".$licitacion['detalle'];
+	if(isset($licitacion['titulo'])){
+		$info=$licitacion['titulo']." URL: ".$licitacion['detalle'];
+	}else{
+		$info="Expediente no encontrado, ¿quizás es alguno de estos?\r\n";
+		foreach($licitacion as $expediente){
+			$info.=$expediente."\r\n";
+		}
+	}
 
         $data = [];                               // Set up the new message data
         $data['chat_id'] = $chat_id;              // Set Chat ID to send the message to

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Longman\TelegramBot\Commands\AdminCommands;
 

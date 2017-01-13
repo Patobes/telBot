@@ -18,7 +18,7 @@ class TempCommand extends UserCommand
 
         $chat_id = $message->getChat()->getId();  // Get the current Chat ID
 
-	$output = shell_exec("/var/www/html/telscript/scripts/temp.sh");
+	$output = shell_exec(dirname(__DIR__)."/scripts/temp.sh");
 
         $data = [];                               // Set up the new message data
         $data['chat_id'] = $chat_id;              // Set Chat ID to send the message to

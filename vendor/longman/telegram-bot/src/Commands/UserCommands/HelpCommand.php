@@ -27,7 +27,7 @@ class HelpCommand extends UserCommand
     /**
      * @var string
      */
-    protected $description = 'Show bot commands help';
+    protected $description = 'Muestra la ayuda';
 
     /**
      * @var string
@@ -63,7 +63,7 @@ class HelpCommand extends UserCommand
         //If no command parameter is passed, show the list
         if ($command === '') {
             $text = sprintf(
-                '%s v. %s' . PHP_EOL . PHP_EOL . 'Commands List:' . PHP_EOL,
+                '%s v. %s' . PHP_EOL . PHP_EOL . 'Comandos:' . PHP_EOL,
                 $this->telegram->getBotName(),
                 $this->telegram->getVersion()
             );
@@ -76,23 +76,23 @@ class HelpCommand extends UserCommand
                 );
             }
 
-            $text .= PHP_EOL . 'For exact command help type: /help <command>';
+            $text .= PHP_EOL . 'Para la ayuda de un comando escribe: /help <command>';
         } else {
             $command = str_replace('/', '', $command);
             if (isset($command_objs[$command])) {
                 /** @var Command $command_obj */
                 $command_obj = $command_objs[$command];
                 $text = sprintf(
-                    'Command: %s v%s' . PHP_EOL .
-                    'Description: %s' . PHP_EOL .
-                    'Usage: %s',
+                    'Comando: %s v%s' . PHP_EOL .
+                    'Descripción: %s' . PHP_EOL .
+                    'Uso: %s',
                     $command_obj->getName(),
                     $command_obj->getVersion(),
                     $command_obj->getDescription(),
                     $command_obj->getUsage()
                 );
             } else {
-                $text = 'No help available: Command /' . $command . ' not found';
+                $text = 'Sin ayuda disponible: Comando /' . $command . ' no encontrado';
             }
         }
 

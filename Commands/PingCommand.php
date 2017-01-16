@@ -8,7 +8,7 @@ use Longman\TelegramBot\Request;
 class PingCommand extends UserCommand
 {
     protected $name = 'ping';                      // Your command's name
-    protected $description = 'pong!';		   // Your command description
+    protected $description = 'Pong!';		   // Your command description
     protected $usage = '/ping';                    // Usage of your command
     protected $version = '1.0.0';                  // Version of your command
 

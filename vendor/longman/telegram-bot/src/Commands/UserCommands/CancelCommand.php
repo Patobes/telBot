@@ -32,7 +32,7 @@ class CancelCommand extends UserCommand
     /**
      * @var string
      */
-    protected $description = 'Cancel the currently active conversation';
+    protected $description = 'Cancela la conversación activa';
 
     /**
      * @var string
@@ -57,7 +57,7 @@ class CancelCommand extends UserCommand
      */
     public function execute()
     {
-        $text = 'No active conversation!';
+        $text = 'No hay conversación activa';
 
         //Cancel current conversation if any
         $conversation = new Conversation(
@@ -67,7 +67,7 @@ class CancelCommand extends UserCommand
 
         if ($conversation_command = $conversation->getCommand()) {
             $conversation->cancel();
-            $text = 'Conversation "' . $conversation_command . '" cancelled!';
+            $text = 'Conversación "' . $conversation_command . '" cancelada';
         }
 
         return $this->removeKeyboard($text);
@@ -100,6 +100,6 @@ class CancelCommand extends UserCommand
      */
     public function executeNoDb()
     {
-        return $this->removeKeyboard('Nothing to cancel.');
+        return $this->removeKeyboard('Nada que cancelar.');
     }
 }

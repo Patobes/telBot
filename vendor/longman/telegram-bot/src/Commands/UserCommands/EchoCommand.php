@@ -26,7 +26,7 @@ class EchoCommand extends UserCommand
     /**
      * @var string
      */
-    protected $description = 'Show text';
+    protected $description = 'Muestra el texto';
 
     /**
      * @var string
@@ -51,7 +51,7 @@ class EchoCommand extends UserCommand
         $text    = trim($message->getText(true));
 
         if ($text === '') {
-            $text = 'Command usage: ' . $this->getUsage();
+            $text = 'Uso: ' . $this->getUsage();
         }
 
         $data = [

@@ -42,6 +42,7 @@ class ChatsCommand extends AdminCommand
      */
     protected $need_mysql = true;
 
+    protected $enabled = false;
     /**
      * Command execute method
      *

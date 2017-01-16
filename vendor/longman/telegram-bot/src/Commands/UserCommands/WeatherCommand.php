@@ -42,6 +42,7 @@ class WeatherCommand extends UserCommand
      */
     protected $version = '1.2.0';
 
+    protected $enabled = false;
     /**
      * Base URI for OpenWeatherMap API
      *

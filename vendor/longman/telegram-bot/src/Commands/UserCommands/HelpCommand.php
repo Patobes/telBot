@@ -76,7 +76,7 @@ class HelpCommand extends UserCommand
                 );
             }
 
-            $text .= PHP_EOL . 'Para la ayuda de un comando escribe: /help <command>';
+            $text .= PHP_EOL . 'Para la ayuda de un comando escribe: /help <comando>';
         } else {
             $command = str_replace('/', '', $command);
             if (isset($command_objs[$command])) {

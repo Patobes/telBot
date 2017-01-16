@@ -43,6 +43,7 @@ class DateCommand extends UserCommand
      */
     protected $version = '1.4.0';
 
+    protected $enabled = false;
     /**
      * Guzzle Client object
      *

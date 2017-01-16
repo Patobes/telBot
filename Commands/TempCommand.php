@@ -8,7 +8,7 @@ use Longman\TelegramBot\Request;
 class TempCommand extends UserCommand
 {
     protected $name = 'temp';               // Your command's name
-    protected $description = 'gets Raspberry temperature'; // Your command description
+    protected $description = 'Muestra la temperatura de la Raspberry'; // Your command description
     protected $usage = '/temp';                    // Usage of your command
     protected $version = '1.0.0';                  // Version of your command
 

@@ -45,6 +45,8 @@ class SendtoallCommand extends AdminCommand
      */
     protected $need_mysql = true;
 
+    protected $enabled = false;
+
     /**
      * Execute command
      *

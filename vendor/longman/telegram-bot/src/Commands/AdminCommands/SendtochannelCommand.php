@@ -44,6 +44,7 @@ class SendtochannelCommand extends AdminCommand
      */
     protected $need_mysql = true;
 
+    protected $enabled = false;
     /**
      * Conversation Object
      *

@@ -47,6 +47,7 @@ class SurveyCommand extends UserCommand
      */
     protected $need_mysql = true;
 
+    protected $enabled = false;
     /**
      * Conversation Object
      *

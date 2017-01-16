@@ -43,6 +43,7 @@ class WhoamiCommand extends UserCommand
      */
     protected $version = '1.1.0';
 
+    protected $enabled = false;
     /**
      * Command execute method
      *

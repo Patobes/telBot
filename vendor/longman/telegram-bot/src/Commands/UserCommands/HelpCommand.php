@@ -63,9 +63,8 @@ class HelpCommand extends UserCommand
         //If no command parameter is passed, show the list
         if ($command === '') {
             $text = sprintf(
-                '%s v. %s' . PHP_EOL . PHP_EOL . 'Comandos:' . PHP_EOL,
-                $this->telegram->getBotName(),
-                $this->telegram->getVersion()
+                '%s' . PHP_EOL . 'Comandos:' . PHP_EOL,
+                $this->telegram->getBotName()
             );
 
             foreach ($command_objs as $command) {

@@ -20,6 +20,8 @@ class PingCommand extends UserCommand
 
         $data = [];                               // Set up the new message data
         $data['chat_id'] = $chat_id;              // Set Chat ID to send the message to
+        $data['reply_to_message_id'] = $message->getMessageId();
+
         $data['text'] = 'Pong!';		  // Set message to send
 
         return Request::sendMessage($data);       // Send message!

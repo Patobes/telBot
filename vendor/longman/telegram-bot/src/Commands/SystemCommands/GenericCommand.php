@@ -55,7 +55,7 @@ class GenericCommand extends SystemCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => 'Command /' . $command . ' not found.. :(',
+            'text'    => 'Comando /' . $command . ' No encontrado... :/',
         ];
 
         return Request::sendMessage($data);

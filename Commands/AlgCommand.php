@@ -3,6 +3,7 @@
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
+use Longman\TelegramBot\Entities\Keyboard;
 use Longman\TelegramBot\Request;
 
 class AlgCommand extends UserCommand
@@ -14,16 +15,79 @@ class AlgCommand extends UserCommand
 
     public function execute()
     {
-        $message = $this->getMessage();           // Get Message object
+        $message = $this->getMessage();
+        $chat_id = $message->getChat()->getId();
 
-        $chat_id = $message->getChat()->getId();  // Get the current Chat ID
+        $message_id = $message->getMessageId();
+        $command    = trim($message->getText(true));
 
-        $data = [];                               // Set up the new message data
-        $data['chat_id'] = $chat_id;              // Set Chat ID to send the message to
-        $data['reply_to_message_id'] = $message->getMessageId();
+        //If no command parameter is passed, show the list
+        if ($command === '') {
+            $text ='¿Qué permutación quieres?';
 
-        $data['text'] = 'Pong!';		  // Set message to send
+            $keyboard = new Keyboard(
+                ['/alg U', '/alg H', '/alg Z'],
+                ['/alg T', '/alg Y', '/alg A'],
+                ['/alg J', '/alg R', '/alg E'],
+                ['/alg F', '/alg G', '/alg N', '/alg V']
+            );
 
-        return Request::sendMessage($data);       // Send message!
+            $data['reply_markup'] = $keyboard;
+
+        } else {
+
+            switch ($command){
+                case 'U':
+                    $text = 'U: '.$command;
+                    break;
+                case 'H':
+                    $text = 'H: '.$command;
+                    break;
+                case 'Z':
+                    $text = 'Z: '.$command;
+                    break;
+                case 'T':
+                    $text = 'T: '.$command;
+                    break;
+                case 'Y':
+                    $text = 'Y: '.$command;
+                    break;
+                case 'A':
+                    $text = 'A: '.$command;
+                    break;
+                case 'J':
+                    $text = 'J: '.$command;
+                    break;
+                case 'R':
+                    $text = 'R: '.$command;
+                    break;
+                case 'E':
+                    $text = 'E: '.$command;
+                    break;
+                case 'F':
+                    $text = 'F: '.$command;
+                    break;
+                case 'G':
+                    $text = 'G: '.$command;
+                    break;
+                case 'N':
+                    $text = 'N: '.$command;
+                    break;
+                case 'V':
+                    $text = 'V: '.$command;
+                    break;
+                default:
+                    $text = 'No se encuentra el algoritmo: '.$command;
+                    break;
+            }
+        }
+
+        $data = [
+            'chat_id'             => $chat_id,
+            'reply_to_message_id' => $message_id,
+            'text'                => $text,
+        ];
+
+        return Request::sendMessage($data);
     }
 }

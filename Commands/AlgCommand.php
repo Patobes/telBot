@@ -36,50 +36,144 @@ class AlgCommand extends UserCommand
                 ['/alg F', '/alg G', '/alg N', '/alg V']
             );
 
+            $keyboard->setOneTimeKeyboard(true);
+
             $data['reply_markup'] = $keyboard;
 
         } else {
 
             switch ($command){
                 case 'U':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg U1', '/alg U2']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+
+                    break;
+                case 'U1':
                     $text = 'U: '.$command;
                     break;
+                case 'U2':
+                    $text = 'U: '.$command;
+                    break;
+
                 case 'H':
                     $text = 'H: '.$command;
                     break;
+
                 case 'Z':
                     $text = 'Z: '.$command;
                     break;
+
                 case 'T':
                     $text = 'T: '.$command;
                     break;
+
                 case 'Y':
                     $text = 'Y: '.$command;
                     break;
+
                 case 'A':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg A1', '/alg A2']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+                    break;
+                case 'A1':
                     $text = 'A: '.$command;
                     break;
+                case 'A2':
+                    $text = 'A: '.$command;
+                    break;
+
                 case 'J':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg J1', '/alg J2']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+                    break;
+                case 'J1':
                     $text = 'J: '.$command;
                     break;
+                case 'J2':
+                    $text = 'J: '.$command;
+                    break;
+
                 case 'R':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg R1', '/alg R2']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+                    break;
+                case 'R1':
                     $text = 'R: '.$command;
                     break;
+                case 'R2':
+                    $text = 'R: '.$command;
+                    break;
+
                 case 'E':
                     $text = 'E: '.$command;
                     break;
+
                 case 'F':
                     $text = 'F: '.$command;
                     break;
+
                 case 'G':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg G1', '/alg G2', '/alg G3', '/alg G4']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+                    break;
+                case 'G1':
                     $text = 'G: '.$command;
                     break;
+                case 'G2':
+                    $text = 'G: '.$command;
+                    break;
+                case 'G3':
+                    $text = 'G: '.$command;
+                    break;
+                case 'G4':
+                    $text = 'G: '.$command;
+                    break;
+
                 case 'N':
+                    $text = 'Especifica que '.$command.' quieres';
+                    $keyboard = new Keyboard(
+                        ['/alg N1', '/alg N2']
+                    );
+                    $keyboard->setOneTimeKeyboard(true);
+
+                    $data['reply_markup'] = $keyboard;
+                    break;
+                case 'N1':
                     $text = 'N: '.$command;
                     break;
+                case 'N2':
+                    $text = 'N: '.$command;
+                    break;
+
                 case 'V':
                     $text = 'V: '.$command;
                     break;
+
                 default:
                     $text = 'No se encuentra el algoritmo: '.$command;
                     break;

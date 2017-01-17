@@ -43,6 +43,7 @@ class AlgCommand extends UserCommand
         } else {
 
             switch ($command){
+
                 case 'U':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
@@ -54,7 +55,8 @@ class AlgCommand extends UserCommand
 
                     break;
                 case 'U1':
-                    $text = 'U: '.$command;
+                    $data['caption'] = 'U: '.$command;
+                    return Request::sendPhoto($data, '../images/test.jpg');
                     break;
                 case 'U2':
                     $text = 'U: '.$command;

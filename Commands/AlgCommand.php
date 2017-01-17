@@ -21,6 +21,10 @@ class AlgCommand extends UserCommand
         $message_id = $message->getMessageId();
         $command    = trim($message->getText(true));
 
+        $data = [
+            'chat_id'             => $chat_id,
+            'reply_to_message_id' => $message_id
+        ];
         //If no command parameter is passed, show the list
         if ($command === '') {
             $text ='¿Qué permutación quieres?';
@@ -82,11 +86,7 @@ class AlgCommand extends UserCommand
             }
         }
 
-        $data = [
-            'chat_id'             => $chat_id,
-            'reply_to_message_id' => $message_id,
-            'text'                => $text,
-        ];
+        $data['text'] = $text;
 
         return Request::sendMessage($data);
     }

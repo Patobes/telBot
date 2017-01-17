@@ -39,7 +39,7 @@ class LicitacionCommand extends AdminCommand
 
                 foreach ($licitacion as $expediente) {
                     //$info .= $expediente . "\r\n";
-                    array_push($buttons,array(['text' => '/licitacion '.$expediente]));
+                    array_push($buttons,array('/licitacion '.$expediente));
                 }
 
                 $keyboard = new Keyboard($buttons);

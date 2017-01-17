@@ -3,6 +3,7 @@
 namespace Longman\TelegramBot\Commands\AdminCommands;
 
 use Longman\TelegramBot\Commands\AdminCommand;
+use Longman\TelegramBot\Entities\Keyboard;
 use Longman\TelegramBot\Request;
 
 class LicitacionCommand extends AdminCommand
@@ -33,9 +34,17 @@ class LicitacionCommand extends AdminCommand
                 $info = $licitacion['titulo'] . " URL: " . $licitacion['detalle'];
             } else {
                 $info = "Expediente no encontrado, ¿quizás es alguno de estos?\r\n";
-                foreach ($licitacion as $expediente) {
+                /*foreach ($licitacion as $expediente) {
                     $info .= $expediente . "\r\n";
-                }
+                }*/
+                $keyboard = new Keyboard($expediente);
+
+                $keyboard
+                    ->setResizeKeyboard(true)
+                    ->setOneTimeKeyboard(true)
+                    ->setSelective(false);
+
+                $data['reply_markup'] = $keyboard;
             }
 
             $data['text'] = $info;          // Set message to send

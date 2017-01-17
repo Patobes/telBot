@@ -25,7 +25,7 @@ class AlgCommand extends UserCommand
             'chat_id'             => $chat_id,
             'reply_to_message_id' => $message_id
         ];
-        //If no command parameter is passed, show the list
+
         if ($command === '') {
             $text ='¿Qué permutación quieres?';
 
@@ -47,133 +47,153 @@ class AlgCommand extends UserCommand
                 case 'U':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg U1', '/alg U2']
+                        ['/alg Ua', '/alg Ub']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
 
                     break;
-                case 'U1':
-                    $data['caption'] = 'U: '.$command;
+                case 'Ua':
+                    $data['caption'] = "Ua: R2 U' R' U' R U R U R U' R";
                     return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'U2':
-                    $text = 'U: '.$command;
+                case 'Ub':
+                    $data['caption'] = "Ub: R' U R' U' R' U' R' U R U R2";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'H':
-                    $text = 'H: '.$command;
+                    $data['caption'] = "H: M2 U M2 U2 M2 U M2";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'Z':
-                    $text = 'Z: '.$command;
+                    $data['caption'] = "Z: U R' U' R U' R U R U' R' U R U R2 U' R' U";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'T':
-                    $text = 'T: '.$command;
+                    $data['caption'] = "T: R U R' U' R' F R2 U' R' U' R U R' F'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'Y':
-                    $text = 'Y: '.$command;
+                    $data['caption'] = "Y: F R U' R' U' R U R' F' R U R' U' R' F R F'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'A':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg A1', '/alg A2']
+                        ['/alg Aa', '/alg Ab']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
                     break;
-                case 'A1':
-                    $text = 'A: '.$command;
+                case 'Aa':
+                    $data['caption'] = "Aa: L' B L' F2 L B' L' F2 L2";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'A2':
-                    $text = 'A: '.$command;
+                case 'Ab':
+                    $data['caption'] = "Ab: x R2 D2 R U R' D2 R U' R";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'J':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg J1', '/alg J2']
+                        ['/alg Ja', '/alg Jb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
                     break;
-                case 'J1':
-                    $text = 'J: '.$command;
+                case 'Ja':
+                    $data['caption'] = "Ja: R U R' F' R U R' U' R' F R2 U' R' U'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'J2':
-                    $text = 'J: '.$command;
+                case 'Jb':
+                    $data['caption'] = "Jb: L' U R' z R2 U R' U' R2 U D";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'R':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg R1', '/alg R2']
+                        ['/alg Ra', '/alg Rb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
                     break;
-                case 'R1':
-                    $text = 'R: '.$command;
+                case 'Ra':
+                    $data['caption'] = "Ra: R' U2 R U2 R' F R U R' U' R' F' R2 U'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'R2':
-                    $text = 'R: '.$command;
+                case 'Rb':
+                    $data['caption'] = "Rb: R U R' F' R U2 R' U2 R' F R U R U2 R' U'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'E':
-                    $text = 'E: '.$command;
+                    $data['caption'] = "E: x' R U' R' D R U R' D' R U R' D R U' R' D'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'F':
-                    $text = 'F: '.$command;
+                    $data['caption'] = "F: R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'G':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg G1', '/alg G2', '/alg G3', '/alg G4']
+                        ['/alg Ga', '/alg Gb', '/alg Gc', '/alg Gd']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
                     break;
-                case 'G1':
-                    $text = 'G: '.$command;
+                case 'Ga':
+                    $data['caption'] = "Ga: R2 u R' R R' U' R u' R2 y L' U L";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'G2':
-                    $text = 'G: '.$command;
+                case 'Gb':
+                    $data['caption'] = "Gb: R' U' R y R2 u R' U R U' R u R2";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'G3':
-                    $text = 'G: '.$command;
+                case 'Gc':
+                    $data['caption'] = "Gc: R2 u' R U' R U R' u R2 f R f'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'G4':
-                    $text = 'G: '.$command;
+                case 'Gd':
+                    $data['caption'] = "Gd: R U R' y' R2 u' R U' R' U R' u R2";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'N':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg N1', '/alg N2']
+                        ['/alg Na', '/alg Nb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
                     $data['reply_markup'] = $keyboard;
                     break;
-                case 'N1':
-                    $text = 'N: '.$command;
+                case 'Na':
+                    $data['caption'] = "Na: z R' U R' D R2 U' R U D' R' D R2 U' R D'";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
-                case 'N2':
-                    $text = 'N: '.$command;
+                case 'Nb':
+                    $data['caption'] = "Nb: R' U R U' R' F' U' F R U R' F R' F' R U' R";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 case 'V':
-                    $text = 'V: '.$command;
+                    $data['caption'] = "V: R' U R' U' y R' F' R2 U' R' U R' F R F";
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/images/test.jpg'));
                     break;
 
                 default:

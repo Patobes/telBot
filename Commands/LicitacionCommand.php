@@ -35,14 +35,16 @@ class LicitacionCommand extends AdminCommand
             } else {
                 $info = "Expediente no encontrado, ¿quizás es alguno de estos?\r\n";
 
-                $buttons = array();
-
-                foreach ($licitacion as $expediente) {
-                    //$info .= $expediente . "\r\n";
-                    array_push($buttons,'/licitacion '.$expediente);
+                if(count($licitacion) == 2){
+                    $keyboard = new Keyboard('/licitacion '.$licitacion[0],'/licitacion '.$licitacion[1]);
+                }elseif(count($licitacion) == 3){
+                    $keyboard = new Keyboard('/licitacion '.$licitacion[0],'/licitacion '.$licitacion[1],'/licitacion '.$licitacion[2]);
+                }else{
+                    $keyboard = new Keyboard('/licitacion '.$licitacion[0],'/licitacion '.$licitacion[1],'/licitacion '.$licitacion[2],'/licitacion '.$licitacion[3]);
+                    foreach ($licitacion as $expediente) {
+                        $info .= $expediente . "\r\n";
+                    }
                 }
-
-                $keyboard = new Keyboard($buttons);
 
                 $keyboard
                     ->setResizeKeyboard(true)

@@ -30,7 +30,7 @@ class AlgCommand extends UserCommand
             $text ='¿Qué permutación quieres?';
 
             $keyboard = new Keyboard(
-                ['/alg U', '/alg H', '/alg Z'],
+                [['text' => 'U', '/alg U'], '/alg H', '/alg Z'],
                 ['/alg T', '/alg Y', '/alg A'],
                 ['/alg J', '/alg R', '/alg E'],
                 ['/alg F', '/alg G', '/alg N', '/alg V']
@@ -46,7 +46,7 @@ class AlgCommand extends UserCommand
                 case 'U':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg U1', '/alg U2']
+                        ['/alg U1'], ['/alg U2']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 
@@ -79,7 +79,7 @@ class AlgCommand extends UserCommand
                 case 'A':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg A1', '/alg A2']
+                        ['/alg A1'], ['/alg A2']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 
@@ -95,7 +95,7 @@ class AlgCommand extends UserCommand
                 case 'J':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg J1', '/alg J2']
+                        ['/alg J1'], ['/alg J2']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 
@@ -111,7 +111,7 @@ class AlgCommand extends UserCommand
                 case 'R':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg R1', '/alg R2']
+                        ['/alg R1'], ['/alg R2']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 
@@ -135,7 +135,7 @@ class AlgCommand extends UserCommand
                 case 'G':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg G1', '/alg G2', '/alg G3', '/alg G4']
+                        ['/alg G1'], ['/alg G2'], ['/alg G3'], ['/alg G4']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 
@@ -157,7 +157,7 @@ class AlgCommand extends UserCommand
                 case 'N':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg N1', '/alg N2']
+                        ['/alg N1'], ['/alg N2']
                     );
                     $keyboard->setOneTimeKeyboard(true);
 

@@ -5,7 +5,7 @@ namespace Longman\TelegramBot\Commands\UserCommands;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
-class PingCommand extends UserCommand
+class AlgCommand extends UserCommand
 {
     protected $name = 'alg';
     protected $description = 'Muestra algoritmos para el cubo de rubik';

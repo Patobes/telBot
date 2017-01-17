@@ -48,6 +48,7 @@ class CancelCommand extends UserCommand
      * @var bool
      */
     protected $need_mysql = true;
+    protected $enabled = false;
 
     /**
      * Command execute method

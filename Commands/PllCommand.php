@@ -6,12 +6,12 @@ use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Entities\Keyboard;
 use Longman\TelegramBot\Request;
 
-class AlgCommand extends UserCommand
+class PllCommand extends UserCommand
 {
-    protected $name = 'alg';
-    protected $description = 'Muestra algoritmos para el cubo de rubik';
-    protected $usage = '/alg, /alg Letra';
-    protected $version = '1.0.0';
+    protected $name = 'pll';
+    protected $description = 'Muestra algoritmos PLL para el 3x3x3';
+    protected $usage = '/pll, /pll Letra';
+    protected $version = '1.0.1';
 
     public function execute()
     {
@@ -30,10 +30,10 @@ class AlgCommand extends UserCommand
             $text ='¿Qué permutación quieres?';
 
             $keyboard = new Keyboard(
-                ['/alg U', '/alg H', '/alg Z'],
-                ['/alg T', '/alg Y', '/alg A'],
-                ['/alg J', '/alg R', '/alg E'],
-                ['/alg F', '/alg G', '/alg N', '/alg V']
+                ['/pll U', '/pll H', '/pll Z'],
+                ['/pll T', '/pll Y', '/pll A'],
+                ['/pll J', '/pll R', '/pll E'],
+                ['/pll F', '/pll G', '/pll N', '/pll V']
             );
 
             $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
@@ -47,7 +47,7 @@ class AlgCommand extends UserCommand
                 case 'U':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Ua', '/alg Ub']
+                        ['/pll Ua', '/pll Ub']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
@@ -86,7 +86,7 @@ class AlgCommand extends UserCommand
                 case 'A':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Aa', '/alg Ab']
+                        ['/pll Aa', '/pll Ab']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
@@ -104,7 +104,7 @@ class AlgCommand extends UserCommand
                 case 'J':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Ja', '/alg Jb']
+                        ['/pll Ja', '/pll Jb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
@@ -122,7 +122,7 @@ class AlgCommand extends UserCommand
                 case 'R':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Ra', '/alg Rb']
+                        ['/pll Ra', '/pll Rb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
@@ -150,7 +150,7 @@ class AlgCommand extends UserCommand
                 case 'G':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Ga', '/alg Gb', '/alg Gc', '/alg Gd']
+                        ['/pll Ga', '/pll Gb', '/pll Gc', '/pll Gd']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 
@@ -176,7 +176,7 @@ class AlgCommand extends UserCommand
                 case 'N':
                     $text = 'Especifica que '.$command.' quieres';
                     $keyboard = new Keyboard(
-                        ['/alg Na', '/alg Nb']
+                        ['/pll Na', '/pll Nb']
                     );
                     $keyboard->setOneTimeKeyboard(true)->setResizeKeyboard(true);
 

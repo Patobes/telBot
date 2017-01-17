@@ -2,5 +2,5 @@
 # Script: wol.sh
 # Purpose: Wake on lan computer with MAC address
 # -------------------------------------------------------
-wakeonlan xx:yy:zz:11:22:33
+wakeonlan 9C:5C:8E:78:86:1A
 

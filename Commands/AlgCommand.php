@@ -55,8 +55,8 @@ class AlgCommand extends UserCommand
 
                     break;
                 case 'U1':
-                    $data['caption'] = 'U: '.$command;
-                    return Request::sendPhoto($data, realpath('test.jpg'));
+                    //$data['caption'] = 'U: '.$command;
+                    return Request::sendPhoto($data, realpath(__DIR__ . '/test.jpg'));
                     break;
                 case 'U2':
                     $text = 'U: '.$command;

@@ -34,10 +34,15 @@ class LicitacionCommand extends AdminCommand
                 $info = $licitacion['titulo'] . " URL: " . $licitacion['detalle'];
             } else {
                 $info = "Expediente no encontrado, ¿quizás es alguno de estos?\r\n";
-                /*foreach ($licitacion as $expediente) {
-                    $info .= $expediente . "\r\n";
-                }*/
-                $keyboard = new Keyboard($expediente);
+
+                $buttons = array();
+
+                foreach ($licitacion as $expediente) {
+                    //$info .= $expediente . "\r\n";
+                    array_push($buttons,['text' => '/licitacion '.$expediente]);
+                }
+
+                $keyboard = new Keyboard($buttons);
 
                 $keyboard
                     ->setResizeKeyboard(true)

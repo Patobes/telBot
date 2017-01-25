@@ -63,10 +63,6 @@ class GenericmessageCommand extends SystemCommand
             $this->getMessage()->getFrom()->getId(),
             $this->getMessage()->getChat()->getId()
         );
-        //Fetch conversation command if it exists and execute it
-        if ($conversation->exists() && ($command = $conversation->getCommand())) {
-            return $this->telegram->executeCommand($command);
-        }
 
         //If its a file, save it
         $message = $this->getMessage();
@@ -79,6 +75,11 @@ class GenericmessageCommand extends SystemCommand
             if ($file->isOk()) {
                 Request::downloadFile($file->getResult());
             }
+        }
+
+        //Fetch conversation command if it exists and execute it
+        if ($conversation->exists() && ($command = $conversation->getCommand())) {
+            return $this->telegram->executeCommand($command);
         }
 
         return Request::emptyResponse();

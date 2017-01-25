@@ -68,6 +68,19 @@ class GenericmessageCommand extends SystemCommand
             return $this->telegram->executeCommand($command);
         }
 
+        //If its a file, save it
+        $message = $this->getMessage();
+
+        if (in_array($message->getType(), ['audio', 'document', 'photo', 'video', 'voice'], true)) {
+            $doc = call_user_func([$message, 'get' . ucfirst($message->getType())]);
+            ($message->getType() === 'photo') && $doc = end($doc);
+
+            $file = Request::getFile(['file_id' => $doc->getFileId()]);
+            if ($file->isOk()) {
+                Request::downloadFile($file->getResult());
+            }
+        }
+
         return Request::emptyResponse();
     }
 }

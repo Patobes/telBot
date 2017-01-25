@@ -5,7 +5,7 @@ namespace Longman\TelegramBot\Commands\AdminCommands;
 use Longman\TelegramBot\Commands\AdminCommand;
 use Longman\TelegramBot\Request;
 
-class WolCommand extends AdminCommand{
+class RedCommand extends AdminCommand{
 
     protected $name = 'red';
     protected $description = 'Devuelve datos de red del servidor';

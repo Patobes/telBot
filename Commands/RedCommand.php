@@ -7,11 +7,10 @@ use Longman\TelegramBot\Request;
 
 class WolCommand extends AdminCommand{
 
-    protected $name = 'wol';
-    protected $description = 'Enciendo el ordenador de casa';
-    protected $usage = '/wol';
+    protected $name = 'red';
+    protected $description = 'Devuelve datos de red del servidor';
+    protected $usage = '/red, /red interfaz';
     protected $version = '1.0.0';
-    protected $enabled = false;
 
     public function execute()
     {
@@ -19,8 +18,9 @@ class WolCommand extends AdminCommand{
 
         $chat_id = $message->getChat()->getId();
         $message_id = $message->getMessageId();
+        $interface = trim($message->getText(true));
 
-        $output = shell_exec(dirname(__DIR__)."/scripts/wol.sh");
+        $output = shell_exec(dirname(__DIR__)."/scripts/ifconfig.sh " . $interface);
 
         $data = [
             'chat_id'             => $chat_id,
